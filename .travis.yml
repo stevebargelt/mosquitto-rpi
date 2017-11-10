@@ -1,22 +1,18 @@
 language: python
 sudo: required
-
 services:
-  - docker
-
+- docker
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker run --rm --privileged multiarch/qemu-user-static:register
-
+- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker run --rm --privileged multiarch/qemu-user-static:register
 install:
-  - docker build --rm --no-cache -t stevebargelt/mosquitto-rpi .
-  - docker push stevebargelt/mosquitto-rpi
-
+- docker build --rm --no-cache -t stevebargelt/mosquitto-rpi .
+- docker push stevebargelt/mosquitto-rpi
 script: true
-
 notifications:
   slack:
     rooms:
-      - secure: "BDGRufEGI9XBbmZJX7y10YfJGmz1J1zgxfmybO6/KLaqT2lCQ39Myp6PnmiuJQRFuIS0gndSy7L7MFaSRq+oe51r/M3ukUnKuIDFbU/gIXtYMqEx6KylJpo4o4DRJVfJRKXeifyj5JxabF82T4DDCIofprpq8xZH2zleGnUGJIZQQhyf0PD3L6E+bOPGBdMoIlVmC5fqr9aiOo4xfRSRLUmN+uJXRjj6Zf9O7DohxPYZqnxuK9Qzwtp5GMkmKZbv2omHreUKdVuXkJ0EuJ4+9+zzWVbMlk8Quk1LHC6wovvWm4lZoYmXG0AWuzu+cZIRSKe0oj49DVmH9f6BSkXb3wTwts47tXmTfQgTCT+/1Xf49F/B5bAnKQV3YX/hqdvqWN3oLtwz2MLJ98AsH4iP2AZrs7RK2VBlGrXJW8cPLL3xcPKUMh7t7kHkqXNkiQh4CJ06bGX50rIEMD741eUFmqF5BquEiSE5yrTHXmm+T3Ms9RH0j+YTDHs1msxDH0Urlju0OHbIKRKtWVQOv4beAoBxd56RoiVev+SbNh+Fj10cCuiGPnCHjxy8Wli0q1Y8XhSdOLa1JlrABfrnMfX9HG1RVG2J97F6Ii5ODudGKjqRBBbwwwRDFCHNL46bkC+wL52Y2/jMOJFpM4rlfgy+uLsyrlbhxoYlBXBJyizroAM="
+      secure: QsErPkGgb4En1bpGechrKEdodYhhCLS7N7AW2WJEmghAvKlsLet0T980LAj6ZLDRHY5IMwujMkh7hCKizabjai3gGAzBV58cd7Ixel0s409S4x/nHsetSlrSV/llDemYzY2fMIy/XzGXzSxrTp8X9iCdC5CB+fGlY5kQgKURQ5Z2o4G2cwXAAwQHAfjh5k8QIDHYv4ou1EuKajD9uVyIkgkq6zMfWqLYei7pLEuEn82yXWoCHZKcTLvd1WbgVSFLW3D1iKtC7WLWACOO3CbYi45s2QmVwACxd+ygyuX/Ja5EElmbsdyRBPLpNj9eSZ3PkWnga8sNG3R1jjjIUpMlmzW8RH7D/qpy9NaJRwYMWaD3XTXsxIcS/iKrxpVnFx1YHn9rQ3Z6V2KfSNZSNiK3HiPrjs3QZ6cRw/R0mbbD92kgoTZPUbXVwobcCrejqwrGySiqB98TRouMIdML1AnZ4dB9WTlZfqgnIzubPKGYYDLY+cV1LzBUXfbF+3ochU94YRJnqocKY6sy+YLoPVZoyyL1oB//lDsqc14ormLRsQdy/dumBTc4XE4dny5UhtVpYIrzIXmb/d2ghrH2biEOjb32chPycnXxwXqq59OUzSQAUTgkOG+D7+X5LMlFRa2NCJfn9abfxe5n0AKYOjxLYyU1y2fFhgsBFrNPepYMvI8=
     template:
-      - "Status=%{result}, Job=%{repository_name}, Build=%{build_number}, URL=%{build_url}, HUB=https://hub.docker.com/r/stevebargelt/mosquitto-rpi/"
+    - Status=%{result}, Job=%{repository_name}, Build=%{build_number}, URL=%{build_url},
+      HUB=https://hub.docker.com/r/stevebargelt/mosquitto-rpi/
