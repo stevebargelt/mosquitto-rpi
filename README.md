@@ -1,4 +1,4 @@
-# mosquitto-rpi - [![Build Status](https://travis-ci.org/stevebargelt/mosquitto-rpi.svg?branch=master)](https://travis-ci.org/stevebargelt/mosquitto-rpi)
+# mosquitto-rpi - [![Build Status](https://travis-ci.org/stevebargelt/mosquitto-rpi.svg?branch=master)](https://travis-ci.org/stevebargelt/mosquitto-rpi)[![Docker Hub Pulls](https://img.shields.io/docker/pulls/stevebargelt/mosquitto-rpi.svg)](https://hub.docker.com/r/stevebargelt/mosquitto-rpi/)
 
 Twitter: [@stevebargelt](http://www.twitter.com/stevebargelt)
 
