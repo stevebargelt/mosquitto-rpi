@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y mosquitto && rm -rf /var/lib/apt/lists/
 RUN mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log && \
 	  chown -R mosquitto:mosquitto /mosquitto
 
-COPY docker-entrypoint.sh / && \
-     chmod +x /docker-entrypoint.sh && \
-     chown -R mosquitto:mosquitto /docker-entrypoint.sh
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+RUN chown -R mosquitto:mosquitto /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
