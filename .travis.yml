@@ -16,3 +16,5 @@ notifications:
     template:
     - Status=%{result}, Job=%{repository_name}, Build=%{build_number}, URL=%{build_url},
       HUB=https://hub.docker.com/r/stevebargelt/mosquitto-rpi/
+  webhooks: 
+    - https://webhookmqtt.azurewebsites.net/api/travisMQTT?code=bLydjI9wlj1oj4wTfDMSqiZxXkgIn7RaVJiYl4qR/MKjUCcb7/abIg==
