@@ -16,8 +16,8 @@ notifications:
     template:
     - Status=%{result}, Job=%{repository_name}, Build=%{build_number}, URL=%{build_url},
       HUB=https://hub.docker.com/r/stevebargelt/mosquitto-rpi/
-    on_success: change # default: always
-    on_failure: always # default: always      
+    on_success: change
+    on_failure: always
   webhooks: 
     urls:
       - https://webhook.atomist.com/atomist/travis/teams/T14LTGA75
