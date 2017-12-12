@@ -18,11 +18,3 @@ notifications:
       HUB=https://hub.docker.com/r/stevebargelt/mosquitto-rpi/
     on_success: change
     on_failure: always
-  webhooks: 
-    urls:
-      - https://webhook.atomist.com/atomist/travis/teams/T14LTGA75
-    on_success: always
-    on_failure: always
-    on_start: always
-    on_cancel: always
-    on_error: always
