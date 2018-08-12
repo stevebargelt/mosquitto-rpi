@@ -1,7 +1,6 @@
 FROM resin/rpi-raspbian:jessie
 MAINTAINER Steve Bargelt <steve@bargelt.com>
 
-RUN apt-get install apt-transport-https
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y wget
