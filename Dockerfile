@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:stretch
 MAINTAINER Steve Bargelt <steve@bargelt.com>
 
 RUN apt-get update
